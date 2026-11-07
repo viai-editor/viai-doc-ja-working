@@ -1,7 +1,7 @@
-*os_haiku.txt*	For Vim バージョン 9.2.  Last change: 2026 Feb 14
+*os_haiku.txt*	For ViAI バージョン 1.0.  Last change: 2026 Feb 14
 
 
-		  VIM リファレンスマニュアル	by Bram Moolenaar
+		  VIAI リファレンスマニュアル
 
 
 							*Haiku*
@@ -232,11 +232,10 @@ Vim は多数の色名を内蔵している。追加の名前については |v:
 
 14. バグと ToDo						*haiku-bugs*
 
-この移植は開発中で完全な状態から遠く離れている。バグレポート、パッチ、そして要
-望について、Vim のメーリングリストか Vim GitHub リポジトリを利用すること。
+この移植は開発中で完全な状態から遠く離れている。バグレポートと要望については、
+ViAI のリポジトリで issue を作成すること。|viai-bugs| を参照:
 
-メーリングリスト: https://www.vim.org/maillist.php
-Vim Github リポジトリ: https://github.com/vim/vim
+	https://github.com/viai-editor/viai/issues
 
 
  vim:tw=78:ts=8:ft=help:norl:
