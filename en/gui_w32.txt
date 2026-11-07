@@ -1,7 +1,7 @@
-*gui_w32.txt*	For Vim version 9.2.  Last change: 2026 May 25
+*gui_w32.txt*	For ViAI version 1.0.  Last change: 2026 May 25
 
 
-		  VIM REFERENCE MANUAL	  by Bram Moolenaar
+		  VIAI REFERENCE MANUAL
 
 
 Vim's Win32 Graphical User Interface			*gui-w32* *win32-gui*
@@ -27,15 +27,15 @@ The Win32 GUI version of Vim will always start the GUI, no matter how you
 start it or what it's called.
 
 The GUI will always run in the Windows subsystem.  Mostly shells automatically
-return with a command prompt after starting gvim.  If not, you should use the
+return with a command prompt after starting gviai.  If not, you should use the
 "start" command: >
-	start gvim [options] file ..
+	start gviai [options] file ..
 <							*E988*
 The console version with the |-g| option may also start the GUI by executing
-gvim.exe: >
-	vim -g [options] file ..
-To make this work, gvim.exe must exist in the same directory as the vim.exe,
-and this feature must be enabled at compile time.
+gviai.exe: >
+	viai -g [options] file ..
+To make this work, gviai.exe must exist in the same directory as the
+viai.exe, and this feature must be enabled at compile time.
 
 One may also use `:gui` from the console version.  However, this is an
 experimental feature and this feature must be enabled at compile time.
@@ -116,37 +116,38 @@ form on some Windows versions.  This is a limitation of the Windows "Send To"
 mechanism.
 
 						*notepad*
-You could replace notepad.exe with gvim.exe, but that has a few side effects.
+You could replace notepad.exe with gviai.exe, but that has a few side effects.
 Some programs rely on notepad arguments, which are not recognized by Vim.  For
 example "notepad -p" is used by some applications to print a file.  It's
 better to leave notepad where it is and use another way to start Vim.
 
 						*win32-popup-menu*
-A more drastic approach is to install an "Edit with Vim" entry in the popup
+A more drastic approach is to install an "Edit with ViAI" entry in the popup
 menu for the right mouse button.  With this you can edit any file with Vim.
 
 This can co-exist with the file associations mentioned above.  The difference
 is that the file associations will make starting Vim the default action.  With
-the "Edit with Vim" menu entry you can keep the existing file association for
+the "Edit with ViAI" menu entry you can keep the existing file association for
 double clicking on the file, and edit the file with Vim when you want.  For
 example, you can associate "*.mak" with your make program.  You can execute
-the makefile by double clicking it and use the "Edit with Vim" entry to edit
+the makefile by double clicking it and use the "Edit with ViAI" entry to edit
 the makefile.
 
 You can select any files and right-click to see a menu option called "Edit
-with gvim".  Choosing this menu option will invoke gvim with the file you have
-selected.  If you select multiple files, you will find two gvim-related menu
-options:
-"Edit with multiple gvims"  -- one gvim for each file in the selection
-"Edit with single gvim"     -- one gvim for all the files in the selection
-And if there already is a gvim running:
-"Edit with existing gvim"   -- edit the file with the running gvim
+with ViAI".  Choosing this menu option will invoke gviai with the file you
+have selected.  If you select multiple files, you will find these menu
+options instead:
+"Edit with ViAI using tabpages" -- one gviai with a tab page for each file
+"Edit with single ViAI"		-- one gviai for all selected files
+"Diff with ViAI"		-- one gviai in diff mode (up to four files)
+And if there already is a gviai running:
+"Edit with existing ViAI"	-- edit the file with the running gviai
 
-The "edit with existing Vim" entries can be disabled by adding an entry in the
-registry under HKLM\Software\Vim\Gvim, named DisableEditWithExisting, and with
-any value.
+The "Edit with existing ViAI" entries can be disabled by adding an entry in
+the registry under HKLM\Software\ViAI\Gviai, named DisableEditWithExisting,
+and with any value.
 						*install-registry*
-You can add the "Edit with Vim" menu entry in an easy way by using the
+You can add the "Edit with ViAI" menu entry in an easy way by using the
 "install.exe" program.  It will add several registry entries for you.
 
 You can also do this by hand.  This is complicated!  Use the install.exe if
@@ -155,26 +156,26 @@ you can.
 1. Start the registry editor with "regedit".
 2. Add these keys:
    key		value name		    value ~
-   HKEY_CLASSES_ROOT\CLSID\{51EEE242-AD87-11d3-9C1E-0090278BBD99}
-		{default}		    Vim Shell Extension
-   HKEY_CLASSES_ROOT\CLSID\{51EEE242-AD87-11d3-9C1E-0090278BBD99}\InProcServer32
-		{default}		    {path}\gvimext.dll
+   HKEY_CLASSES_ROOT\CLSID\{F191A2A2-D786-484E-A3F4-8A75FDD9AC00}
+		{default}		    ViAI Shell Extension
+   HKEY_CLASSES_ROOT\CLSID\{F191A2A2-D786-484E-A3F4-8A75FDD9AC00}\InProcServer32
+		{default}		    {path}\gviaiext.dll
 		ThreadingModel		    Apartment
-   HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\gvim
-		{default}		    {51EEE242-AD87-11d3-9C1E-0090278BBD99}
+   HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\gviai
+		{default}		    {F191A2A2-D786-484E-A3F4-8A75FDD9AC00}
    HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved
-		{51EEE242-AD87-11d3-9C1E-0090278BBD99}
-					    Vim Shell Extension
-   HKEY_LOCAL_MACHINE\Software\Vim\Gvim
-		path			    {path}\gvim.exe
-   HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\vim 8.2
-		DisplayName		    Vim 8.2: Edit with Vim popup menu entry
+		{F191A2A2-D786-484E-A3F4-8A75FDD9AC00}
+					    ViAI Shell Extension
+   HKEY_LOCAL_MACHINE\Software\ViAI\Gviai
+		path			    {path}\gviai.exe
+   HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\ViAI 1.0
+		DisplayName		    ViAI 1.0
 		UninstallString		    {path}\uninstall.exe
 
    Replace {path} with the path that leads to the executable.
    Don't type {default}, this is the value for the key itself.
 
-To remove "Edit with Vim" from the popup menu, just remove the registry
+To remove "Edit with ViAI" from the popup menu, just remove the registry
 entries mentioned above.  The "uninstall.exe" program can do this for you.
 You can also use the entry in the Windows standard "Add/Remove Programs" list.
 
@@ -193,7 +194,8 @@ Vim in the "Open With..." context menu			*win32-open-with-menu*
 
 If you use the Vim install program you have the choice to add Vim to the "Open
 With..." menu.  This means you can use Vim to edit many files.  Not every file
-(for unclear reasons...), thus the "Edit with Vim" menu entry is still useful.
+(for unclear reasons...), thus the "Edit with ViAI" menu entry is still
+useful.
 
 One reason to add this is to be able to edit HTML files directly from Internet
 Explorer.  To enable this use the "Tools" menu, "Internet Options..." entry.
@@ -205,22 +207,22 @@ Doing this manually can be done with this script:
 ----------------------------------------------------------
 REGEDIT4
 
-[HKEY_CLASSES_ROOT\Applications\gvim.exe]
+[HKEY_CLASSES_ROOT\Applications\gviai.exe]
 
-[HKEY_CLASSES_ROOT\Applications\gvim.exe\shell]
+[HKEY_CLASSES_ROOT\Applications\gviai.exe\shell]
 
-[HKEY_CLASSES_ROOT\Applications\gvim.exe\shell\edit]
+[HKEY_CLASSES_ROOT\Applications\gviai.exe\shell\edit]
 
-[HKEY_CLASSES_ROOT\Applications\gvim.exe\shell\edit\command]
-@="c:\\vim\\vim82\\gvim.exe \"%1\""
+[HKEY_CLASSES_ROOT\Applications\gviai.exe\shell\edit\command]
+@="c:\\viai\\viai10\\gviai.exe \"%1\""
 
-[HKEY_CLASSES_ROOT\.htm\OpenWithList\gvim.exe]
+[HKEY_CLASSES_ROOT\.htm\OpenWithList\gviai.exe]
 
-[HKEY_CLASSES_ROOT\*\OpenWithList\gvim.exe]
+[HKEY_CLASSES_ROOT\*\OpenWithList\gviai.exe]
 
 ----------------------------------------------------------
 
-Change the "c:\\vim\\vim82" bit to where gvim.exe is actually located.
+Change the "c:\\viai\\viai10" bit to where gviai.exe is actually located.
 
 To uninstall this run the Vim uninstall program or manually delete the
 registry entries with "regedit".
@@ -271,11 +273,11 @@ command.  The external command gets its own environment for running, just like
 it was started from a DOS prompt.
 
 							*win32-vimrun*
-Executing an external command is done indirectly by the "vimrun" command.  The
-"vimrun.exe" must be in the path for this to work.  Or it must be in the same
-directory as the Vim executable.  If "vimrun" cannot be found, the command is
-executed directly, but then the DOS window closes immediately after the
-external command has finished.
+Executing an external command is done indirectly by the "viairun" command.
+The "viairun.exe" must be in the path for this to work.  Or it must be in the
+same directory as the Vim executable.  If "viairun" cannot be found, the
+command is executed directly, but then the DOS window closes immediately after
+the external command has finished.
 WARNING: If you close this window with the "X" button, and confirm the
 question if you really want to kill the application, Vim may be killed too!
 (This does not apply to commands run asynchronously with ":!start".)
@@ -447,11 +449,11 @@ See the Make_mvc.mak file for instructions, search for XPM.
 To try out if XPM support works do this: >
 	:help
 	:let runtime = escape($VIMRUNTIME, ' \')
-	:exe 'sign define vimxpm icon=' .. runtime .. '\\vim16x16.xpm'
+	:exe 'sign define vimxpm icon=' .. runtime .. '\\viai16x16.xpm'
 	:exe 'sign place 1 line=1 name=vimxpm file=' .. expand('%:p')
 <
-You may need to get the vim16x16.xpm file from github:
-https://github.com/vim/vim/blob/master/runtime/vim16x16.xpm
+You may need to get the viai16x16.xpm file from github:
+https://github.com/viai-editor/viai/blob/master/runtime/viai16x16.xpm
 
 
 Keycode translation strategy    *w32-experimental-keycode-trans-strategy*
@@ -486,7 +488,7 @@ VIM_KEYCODE_TRANS_STRATEGY can be set to the desired value ("experimental" or
 "classic"), to override the default, e.g., type in dos prompt:
 >
         set VIM_KEYCODE_TRANS_STRATEGY=experimental
-        gvim.exe
+        gviai.exe
 <
 
 Title Bar						*gui-w32-title-bar*
