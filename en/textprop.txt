@@ -1,7 +1,7 @@
-*textprop.txt*	For Vim version 9.2.  Last change: 2026 May 31
+*textprop.txt*	For ViAI version 1.0.  Last change: 2026 May 31
 
 
-		  VIM REFERENCE MANUAL	  by Bram Moolenaar
+		  VIAI REFERENCE MANUAL
 
 
 Displaying text with properties attached.	*textprop* *text-properties*
@@ -91,7 +91,7 @@ and the text properties updated.  But this can be done asynchronously.
 Internal error *E967*
 
 If you see E967, please report the bug.  You can do this at Github:
-https://github.com/vim/vim/issues/new
+https://github.com/viai-editor/viai/issues/new
 
 ==============================================================================
 2. Functions						*text-prop-functions*
