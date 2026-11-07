@@ -1,7 +1,7 @@
-*options.txt*	For Vim version 9.2.  Last change: 2026 Oct 25
+*options.txt*	For ViAI version 1.0.  Last change: 2026 Oct 25
 
 
-		  VIM REFERENCE MANUAL	  by Bram Moolenaar
+		  VIAI REFERENCE MANUAL
 
 
 Options							*options*
@@ -7548,11 +7548,15 @@ A jump table for the options with a short description can be found at |Q_op|.
 	  print/	files for printing |postscript-print-encoding|
 	  spell/	spell checking files |spell|
 	  syntax/	syntax files |mysyntaxfile|
-	  tutor/	files for vimtutor |tutor|
+	  tutor/	files for the Vim tutor |tutor|
 
 	And any other file searched for with the |:runtime| command.
 
 	For $XDG_CONFIG_HOME see |xdg-base-dir|.
+	When ViAI's own user configuration exists (see |viai-config|), the
+	default uses "$HOME/.viai" or "$XDG_CONFIG_HOME/viai" on Unix and
+	"$HOME/viaifiles" on MS-Windows instead of the personal directory of
+	Vim, also for the "after" directory.
 
 	The defaults for most systems are setup to search five locations:
 	1. In your $MYVIMDIR directory, for your personal preferences.
@@ -10087,6 +10091,9 @@ A jump table for the options with a short description can be found at |Q_op|.
 			feature}
 	Name of the directory where to store files for |:mkview|.
 	For $XDG_CONFIG_HOME see |xdg-base-dir|.
+	When ViAI's own user configuration exists (see |viai-config|), the
+	default is "$HOME/.viai/view" or "$XDG_CONFIG_HOME/viai/view" for Unix
+	and "$HOME/viaifiles/view" for Win32.
 	Environment variables are expanded |:set_env|.
 	This option cannot be set from a |modeline| or in the |sandbox|, for
 	security reasons.
@@ -10248,6 +10255,7 @@ A jump table for the options with a short description can be found at |Q_op|.
 			{not available when compiled without the |+viminfo|
 			feature}
 	When non-empty, overrides the file name used for viminfo.
+	For the default file name see |viminfo-file-name|.
 	When equal to "NONE" no viminfo file will be read or written.
 	This option can be set with the |-i| command line flag.  The |--clean|
 	command line flag sets it to "NONE".
