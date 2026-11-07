@@ -1,7 +1,7 @@
-*intro.txt*	For Vim version 9.2.  Last change: 2026 Mar 08
+*intro.txt*	For ViAI version 1.0.  Last change: 2026 Mar 08
 
 
-		  VIM REFERENCE MANUAL	  by Bram Moolenaar
+		  VIAI REFERENCE MANUAL
 
 
 Introduction to Vim					*ref* *reference*
@@ -17,6 +17,9 @@ Introduction to Vim					*ref* *reference*
 
 ==============================================================================
 1. Introduction						*intro*
+
+ViAI is a modified version of Vim, see |viai|.  The rest of this manual
+applies to ViAI, also where it mentions Vim.
 
 Vim stands for Vi IMproved.  It used to be Vi IMitation, but there are so many
 improvements that a name change was appropriate.  Vim is a text editor which
@@ -42,6 +45,8 @@ document, there is a separate document for each supported system, see
 |sys-file-list|.
 
 							*pronounce*
+ViAI is pronounced "vee-eye", see |viai|.  The GUI version of ViAI is
+written "GViAI".
 Vim is pronounced as one word, like Jim, not vi-ai-em.  It's written with a
 capital, since it's a name, again like Jim.  The GUI version of Vim is written
 "gVim" (or "GVim" when at the beginning of a sentence).
@@ -59,6 +64,9 @@ here:
 
 ==============================================================================
 2. Vim on the internet					*internet*
+
+ViAI is developed on GitHub:
+	https://github.com/viai-editor/viai
 
 			*www* *WWW*  *faq* *FAQ* *distribution* *download*
 The Vim pages contain the most recent information about Vim.  They also
@@ -125,7 +133,18 @@ http://www.vim.org/maillist.php
 
 Bug reports:				*bugs* *bug-reports* *bugreport.vim*
 
-There are three ways to report bugs:
+							*viai-bugs*
+How a bug in ViAI is handled depends on where it occurs:
+- A bug that occurs only in ViAI: please open an issue in the ViAI repository
+  to report it:
+	https://github.com/viai-editor/viai/issues
+  The maintainer fixes it in ViAI with a pull request.
+- A bug that also occurs in Vim: please open an issue in the ViAI repository
+  to report it.  The maintainer fixes it in ViAI and reports it to Vim.  When
+  Vim fixes it later, ViAI takes the fix of Vim.
+- A bug that occurs only in Vim: please report it to Vim as described below.
+
+There are three ways to report bugs to Vim:
 1. For issues with runtime files, look in the header for an email address or
    any other way to report it to the maintainer.
 2. Open an issue on GitHub: https://github.com/vim/vim/issues
@@ -189,6 +208,8 @@ introduce Y2K problems, but those are not really part of Vim itself.
 3. Credits						*credits* *author*
 
 Most of Vim was created by Bram Moolenaar <Bram@vim.org> |Bram-Moolenaar|.
+
+ViAI is maintained by Hirohito Higashi (h-east), see |viai|.
 
 Parts of the documentation come from several Vi manuals, written by:
 	W.N. Joy
