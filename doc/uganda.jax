@@ -1,7 +1,7 @@
-*uganda.txt*	For Vim バージョン 9.2.  Last change: 2026 Jun 07
+*uganda.txt*	For ViAI バージョン 1.0.  Last change: 2026 Jun 07
 
 
-		  VIM リファレンスマニュアル	by Bram Moolenaar
+		  VIAI リファレンスマニュアル
 
 
 			*uganda* *Uganda* *copying* *copyright* *license*
@@ -27,6 +27,9 @@ Vim ユーザーからの寄付は引き続き歓迎しており、引き続き�
 この活動を継続して支援するには、Kuwasha まで寄付を送ること。
 
 ライセンス~
+
+ViAI は Vim を改変したものである。ViAI で行われた変更は Apache License 2.0 で
+ライセンスされる。|viai-license| を参照。
 
 Vimのドキュメントには Open Publication License が適用されている。
 |manual-copyright| を参照すること。
