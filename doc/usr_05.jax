@@ -1,7 +1,7 @@
-*usr_05.txt*	For Vim バージョン 9.2.  Last change: 2026 Aug 30
+*usr_05.txt*	For ViAI バージョン 1.0.  Last change: 2026 Aug 30
 
 
-		     VIM ユーザーマニュアル	by Bram Moolenaar
+		     VIAI ユーザーマニュアル
 
 
 				  設定の変更
@@ -545,6 +545,29 @@ osc52.vim パッケージは、OSC 52 ターミナル コマンドのサポー�
 
 パッケージの読み込みが完了したら、こちらで詳細をご覧ください: >
 	:h osc52.txt
+
+------------------------------------------------------------------------------
+lsp.vim と vim9ls パッケージの追加	*lsp.vim-install* *package-lsp.vim*
+					*vim9ls-install* *package-vim9ls*
+------------------------------------------------------------------------------
+
+lsp.vim は Language Server Protocol のクライアントで、vim9ls は Vim script の
+ための言語サーバーです。これらで Vim script をチェックするには、vimrc ファイル
+に以下の行を追加してください: >
+	if has('viai')
+	  packadd! lsp.vim
+	  packadd! vim9ls
+	  let g:lsp_server_list = [#{filetypes: ['vim'], name: 'vim9ls',
+		  \ cmd: function('vim9ls#Command')}]
+	endif
+<
+ViAI のチェックにより、Vim でのエラーを回避します。ViAI が独自の vimrc ファイ
+ルを持たない限り、Vim は同じ vimrc ファイルを読み込むからです。|viai-config|
+を参照。
+
+パッケージの読み込みが完了したら、こちらで詳細をご覧ください: >
+	:h lsp.txt
+	:h vim9ls.txt
 
 パッケージについてのより詳しい情報は次の項目を参照してください: |packages|
 
