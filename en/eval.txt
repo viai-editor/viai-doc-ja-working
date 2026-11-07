@@ -1,7 +1,7 @@
-*eval.txt*	For Vim version 9.2.  Last change: 2026 Nov 04
+*eval.txt*	For ViAI version 1.0.  Last change: 2026 Nov 04
 
 
-		  VIM REFERENCE MANUAL	  by Bram Moolenaar
+		  VIAI REFERENCE MANUAL
 
 
 Expression evaluation			*expression* *expr* *E15* *eval*
@@ -2822,7 +2822,7 @@ v:progpath	Contains the command with which Vim was invoked, in a form
 		On Linux and other systems it will always be the full path.
 		On Mac it may just be "vim" and using exepath() as mentioned
 		above should be used to get the full path.
-		On MS-Windows the executable may be called "vim.exe", but the
+		On MS-Windows the executable may be called "viai.exe", but the
 		".exe" is not added to v:progpath.
 		Read-only.
 
@@ -3098,6 +3098,16 @@ v:versionlong	Like v:version, but also including the patchlevel in the last
 		was included into an older version, e.g. for a security fix.
 		Use the has() function to make sure the patch is actually
 		included.
+
+				*v:viai_version* *viai_version-variable*
+v:viai_version	Version number of ViAI, like |v:version| for Vim.  Version
+		1.0 is 100.  Read-only.
+
+			*v:viai_versionlong* *viai_versionlong-variable*
+v:viai_versionlong
+		Like v:viai_version, but also including the patchlevel in the
+		last four digits.  Version 1.0 with patch 40 has value 1000040.
+		Read-only.
 
 				*v:vim_did_enter* *vim_did_enter-variable*
 v:vim_did_enter	Zero until most of startup is done.  It is set to one just
