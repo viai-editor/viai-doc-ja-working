@@ -1,7 +1,7 @@
-*syntax.txt*	For Vim バージョン 9.2.  Last change: 2026 Oct 30
+*syntax.txt*	For ViAI バージョン 1.0.  Last change: 2026 Oct 30
 
 
-		  VIM リファレンスマニュアル    by Bram Moolenaar
+		  VIAI リファレンスマニュアル
 
 
 構文ハイライト			*syntax* *syntax-highlighting* *coloring*
@@ -5550,8 +5550,10 @@ term={attr-list}			*attr-list* *highlight-term* *E418*
 	"undercurl" は波下線のこと。"undercurl" が使用できないときは
 	"underline" が使われる。一般的には "undercurl" および "strikethrough"
 	はGUIといくつかの端末で使用できる。その色は |highlight-guisp| か
-	|highlight-ctermul| で設定できる。端末で波下線が動くようにするにはこれ
-	らの termcap エントリを試してみるとよい: >
+	|highlight-ctermul| で設定できる。端末が波下線を扱えると応答した場合
+	は、Vim が |t_Cs| と |t_Ce| を自身で設定する。|terminalprops()| を参
+	照。そうでない場合は、端末で波下線が動くようにするにはこれらの termcap
+	エントリを試してみるとよい: >
 	    let &t_Cs = "\e[4:3m"
 	    let &t_Ce = "\e[4:0m"
 
