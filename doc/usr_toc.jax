@@ -1,7 +1,7 @@
-*usr_toc.txt*	For Vim バージョン 9.2.  Last change: 2026 Feb 14
+*usr_toc.txt*	For ViAI バージョン 1.0.  Last change: 2026 Feb 14
 
 
-		     VIM ユーザーマニュアル	by Bram Moolenaar
+		     VIAI ユーザーマニュアル
 
 
 				     目次		*user-manual* *usr*
@@ -52,7 +52,7 @@ Vim script を書く ~
 |usr_52.txt|  大きなプラグインを作る
 
 インストール ~
-|usr_90.txt|  Vimのインストール
+|usr_90.txt|  ViAIのインストール
 
 
 リファレンスマニュアル ~
@@ -370,7 +370,7 @@ Vim script を書く ~
 
 インストール方法を説明します。
 
-|usr_90.txt|  Vim のインストール
+|usr_90.txt|  ViAI のインストール
 		|90.1|	Unix
 		|90.2|	MS-Windows
 		|90.3|	アップグレード
