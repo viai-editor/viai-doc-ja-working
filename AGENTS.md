@@ -123,6 +123,8 @@ viai-editor/viai-doc-ja へ反映する。
 - "abbreviation" は「短縮入力」、"autocommand" は「自動コマンド」、"map"
   は「マップ」、"mapping" は「マッピング」、X11 の "selection" は
   「セレクション」、章題の "Introduction" は「はじめに」と訳す。
+- "fuzzy" は「ファジー」と訳す (例: 「ファジーマッチ」)。"ambiguous" の訳
+  の「曖昧」と区別するため、「あいまい」は使わない。
 - "forward"、"backward" は「前方」、「後方」と訳す。"before"、"after" は
   「前」、「後ろ」と訳し、「前方」、「後方」は使わない。
 - 記号の名前の "backtick" は「バッククォート」、"backslash" は「バック
