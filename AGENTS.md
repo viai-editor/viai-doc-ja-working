@@ -161,13 +161,12 @@ viai-editor/viai-doc-ja へ反映する。
   にする (例: `定義できる。 *E1316*`)。そうしないとタグにならない。
 - `{not ...}`、`{only ...}` のような `{...}` の注記の訳は、`{` の直後を
   `Vim`、`ViAI`、`|ViAI|` または `|+feature|` にする (例:
-  `{|+textprop| 機能が…}`、`{Vim が |+tcl| 機能付きで…}`、
-  `{|ViAI| のみ}`)。そうしないと `syntax/help_ja.vim` の
-  `helpNotVi` でハイライトされない。
+  `{|+textprop| 機能が…}`、`{Vim の Win32 GUI のみ}`、`{|ViAI| のみ}`)。
+  そうしないと `syntax/help_ja.vim` の `helpNotVi` でハイライトされ
+  ない。`|+feature|` で始められる注記に「Vim が」を足さない。
   - `{only available when compiled with the |+xxx| feature}` および
     `{not available when compiled without the |+xxx| feature}` は、どち
-    らも `{Vim が |+xxx| 機能付きでコンパイルされたときのみ有効}` または
-    `{|+xxx| 機能付きでコンパイルされたときのみ有効}` と訳す。
+    らも `{|+xxx| 機能付きでコンパイルされたときのみ有効}` と訳す。
 - 原文の大文字の見出し (例: `LISTING SIGNS`) は、訳の行頭に `☆` を
   付ける (例: `☆目印の一覧表示`)。そうしないと `syntax/help_ja.vim` の
   `helpHeadline` でハイライトされない。名前の見出し (例: `UNIX`、
