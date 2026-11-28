@@ -121,8 +121,8 @@ viai-editor/viai-doc-ja へ反映する。
     「上書き」
   - "Terminal-Job mode": 「端末ジョブモード」
 - "abbreviation" は「短縮入力」、"autocommand" は「自動コマンド」、"map"
-  は「マップ」、X11 の "selection" は「セレクション」、章題の
-  "Introduction" は「はじめに」と訳す。
+  は「マップ」、"mapping" は「マッピング」、X11 の "selection" は
+  「セレクション」、章題の "Introduction" は「はじめに」と訳す。
 - "forward"、"backward" は「前方」、「後方」と訳す。"before"、"after" は
   「前」、「後ろ」と訳し、「前方」、「後方」は使わない。
 - 記号の名前の "backtick" は「バッククォート」、"backslash" は「バック
